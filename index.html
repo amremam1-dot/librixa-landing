@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Librixa — your premium personal audiobook library. Stream from Google Drive, organize local audio files, and enjoy beautiful insights." />
+  <title>Librixa | Premium Audiobook Library & Player</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Outfit:wght@100..900&family=Cairo:wght@400;600;700;850&display=swap" rel="stylesheet">
+</head>
+<body class="dark-theme">
+  <!-- Sticky Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a class="brand" href="#top" aria-label="Librixa home">
+        <img src="assets/librixa-logo.png" alt="Librixa Logo" />
+        <span data-i18n="brand-name">LIBRIXA</span>
+      </a>
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#features" data-i18n="nav-features">Features</a>
+        <a href="#interactive-showcase" data-i18n="nav-showcase">Showcase</a>
+        <a href="#download" data-i18n="nav-download">Get Librixa</a>
+        <a href="#faq" data-i18n="nav-faq">FAQ</a>
+        <a href="https://librixa-app.onrender.com/" target="_blank" rel="noopener" class="nav-app-link" data-i18n="nav-web-app">Web Player</a>
+        
+        <!-- Language Switcher Button -->
+        <button id="lang-toggle" class="lang-toggle-btn" aria-label="Toggle language">
+          <span class="lang-text">العربية</span>
+        </button>
+
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light/dark theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero Section -->
+    <section class="hero reveal">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="hero-eyebrow">YOUR AUDIOBOOK LIBRARY</p>
+        <h1 data-i18n="hero-title">Listen to the books you love. <em>Your way.</em></h1>
+        <p class="lead" data-i18n="hero-lead">Librixa brings every audiobook into one calm, organized experience — whether it lives on your phone or in your Google Drive storage.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#download" data-i18n="hero-btn-download">
+            Get Librixa
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <a class="button ghost" href="https://librixa-app.onrender.com/" target="_blank" rel="noopener" data-i18n="hero-btn-web-app">Launch Web Player</a>
+        </div>
+        <div class="trust">
+          <span class="trust-item" data-i18n="hero-trust-local">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="12" y1="2" x2="12" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line></svg>
+            Local Files
+          </span>
+          <span class="trust-item" data-i18n="hero-trust-drive">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            Google Drive
+          </span>
+          <span class="trust-item" data-i18n="hero-trust-offline">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path><path d="M2 12h20"></path></svg>
+            Offline Playback
+          </span>
+        </div>
+      </div>
+      
+      <!-- Device Widget with Real Screenshot -->
+      <div class="hero-art">
+        <div class="glow glow-orange"></div>
+        <div class="glow glow-blue"></div>
+        <div class="phone-frame">
+          <div class="hero-screen-container">
+            <img src="assets/player.jpg" alt="Librixa Audiobook Player Screen" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Features Grid -->
+    <section class="features-section reveal" id="features">
+      <div class="section-header">
+        <p class="eyebrow" data-i18n="features-eyebrow">ONE LIBRARY. NO CLUTTER.</p>
+        <h2 data-i18n="features-title">A better home for every chapter.</h2>
+        <p class="lead-text" data-i18n="features-lead">Stop hunting through folders and switching apps. Librixa makes your listening library feel effortless from the first book to the last.</p>
+      </div>
+
+      <div class="features-grid">
+        <article class="feature-card reveal">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </div>
+          <h3 data-i18n="feat1-title">Find your next listen, fast.</h3>
+          <p data-i18n="feat1-desc">Search titles, authors, and folders. Filter your library by what you are currently listening to, what you loved, or what you finished.</p>
+        </article>
+
+        <article class="feature-card featured reveal">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 0 .57-8.38l-.57.81"/></svg>
+          </div>
+          <h3 data-i18n="feat2-title">Pick up where you stopped.</h3>
+          <p data-i18n="feat2-desc">Librixa automatically remembers your exact playback position. Save unlimited custom bookmarks to revisit key moments at any time.</p>
+        </article>
+
+        <article class="feature-card reveal">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+          </div>
+          <h3 data-i18n="feat3-title">Cloud & Local Integration</h3>
+          <p data-i18n="feat3-desc">Build your unified library from local audio files or Google Drive storage, then download audiobooks for the road ahead.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Interactive Showcase Section (Tabbed Gallery) -->
+    <section class="interactive-showcase reveal" id="interactive-showcase">
+      <div class="showcase-container">
+        <div class="showcase-content">
+          <p class="eyebrow" data-i18n="showcase-eyebrow">DESIGNED AROUND YOUR LISTENING</p>
+          <h2 data-i18n="showcase-title">Everything you need, beautifully organized.</h2>
+          <p class="lead-text" data-i18n="showcase-lead">Click the tabs below to explore the focused audio player, listen to insights, and toggle configurations tailored to your listening habits.</p>
+
+          <div class="showcase-tabs">
+            <button class="showcase-tab active" data-target="player">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+              <span data-i18n="tab1-title">Focused Player</span>
+            </button>
+            <button class="showcase-tab" data-target="stats">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+              <span data-i18n="tab2-title">Listening Insights</span>
+            </button>
+            <button class="showcase-tab" data-target="settings">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+              <span data-i18n="tab3-title">Settings Control</span>
+            </button>
+          </div>
+
+          <div class="tab-caption-container">
+            <div class="tab-caption active" id="caption-player">
+              <h3 data-i18n="cap1-title">Speed, Sleep Timer and Easy Chapter Controls</h3>
+              <p data-i18n="cap1-desc">Skip with absolute confidence. Manage playback settings instantly directly from the notification shade or lock-screen controls, or fine-tune details in the app player view.</p>
+            </div>
+            <div class="tab-caption" id="caption-stats">
+              <h3 data-i18n="cap2-title">Track Your Listening Momentum</h3>
+              <p data-i18n="cap2-desc">Get visually gorgeous reports of your daily and weekly listening activities. Set personal streaks and goals to keep track of your audiobook progress.</p>
+            </div>
+            <div class="tab-caption" id="caption-settings">
+              <h3 data-i18n="cap3-title">Fine-tune Your Playback App</h3>
+              <p data-i18n="cap3-desc">Configure automatic library updates, Google Drive folder sync behavior, local storage scanning paths, theme colors, and download controls.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="showcase-media">
+          <div class="phone-mockup">
+            <div class="phone-screen-container">
+              <img id="showcase-img" src="assets/player.jpg" alt="Focused Player Showcase" class="active" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screenshot Gallery Section -->
+    <section class="gallery-section reveal" id="app-gallery">
+      <div class="section-header">
+        <p class="eyebrow" data-i18n="gallery-eyebrow">SCREENSHOTS GALLERY</p>
+        <h2 data-i18n="gallery-title">Real App Interfaces</h2>
+        <p class="lead-text" data-i18n="gallery-lead">Take a closer look at the actual screens and design of the Librixa app. Clean, modern, and built with utility in mind.</p>
+      </div>
+      <div class="gallery-wrapper">
+        <div class="gallery-scroll">
+          <div class="gallery-item">
+            <div class="gallery-phone">
+              <img src="assets/Screenshot_20260714_143618.jpg" alt="Library Feed" />
+            </div>
+            <span data-i18n="gallery-item1">Library Feed</span>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-phone">
+              <img src="assets/Screenshot_20260714_143647.jpg" alt="Audiobook View" />
+            </div>
+            <span data-i18n="gallery-item2">Audiobook Info</span>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-phone">
+              <img src="assets/Screenshot_20260714_143714.jpg" alt="Cloud Explorer" />
+            </div>
+            <span data-i18n="gallery-item3">Cloud Storage</span>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-phone">
+              <img src="assets/Screenshot_20260714_143737.jpg" alt="Folders List" />
+            </div>
+            <span data-i18n="gallery-item4">Folders List</span>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-phone">
+              <img src="assets/Screenshot_20260714_143746.jpg" alt="Downloads Manager" />
+            </div>
+            <span data-i18n="gallery-item5">Downloads</span>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-phone">
+              <img src="assets/Screenshot_20260714_143753.jpg" alt="Chapter Selection" />
+            </div>
+            <span data-i18n="gallery-item6">Chapter Details</span>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-phone">
+              <img src="assets/bookshelf.jpg" alt="Bookshelf Grid" />
+            </div>
+            <span data-i18n="gallery-item7">Bookshelf Grid</span>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-phone">
+              <img src="assets/Screenshot_20260714_143910.jpg" alt="History & Stats" />
+            </div>
+            <span data-i18n="gallery-item8">Listening Stats</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- App Capabilities Section -->
+    <section class="capabilities reveal">
+      <div class="section-header">
+        <p class="eyebrow" data-i18n="caps-eyebrow">ONE APP, COMPLETE CONTROL</p>
+        <h2 data-i18n="caps-title">Built around every part of audiobook listening.</h2>
+      </div>
+
+      <div class="capability-grid">
+        <article class="capability-card reveal">
+          <div class="cap-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+          </div>
+          <h3 data-i18n="cap-title-1">Google Drive Sync</h3>
+          <p data-i18n="cap-desc-1">Connect your personal Drive storage, scan directories for audiobooks, and stream files instantly without consuming local disk space.</p>
+        </article>
+
+        <article class="capability-card reveal">
+          <div class="cap-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+          </div>
+          <h3 data-i18n="cap-title-2">Local Library Support</h3>
+          <p data-i18n="cap-desc-2">Scan custom folders on your device. Librixa detects audio file modifications and updates metadata dynamically in the background.</p>
+        </article>
+
+        <article class="capability-card reveal">
+          <div class="cap-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+          </div>
+          <h3 data-i18n="cap-title-3">Smart Chapters</h3>
+          <p data-i18n="cap-desc-3">Parsed metadata lets you easily jump to chapters. Customize chapter headings, keep notes, and mark bookmarks precisely.</p>
+        </article>
+
+        <article class="capability-card reveal">
+          <div class="cap-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          </div>
+          <h3 data-i18n="cap-title-4">Offline Downloads</h3>
+          <p data-i18n="cap-desc-4">Save audio files directly to device memory. Seamlessly switch between online streaming and offline playback when traveling.</p>
+        </article>
+
+        <article class="capability-card reveal">
+          <div class="cap-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="12" y1="2" x2="12" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line></svg>
+          </div>
+          <h3 data-i18n="cap-title-5">Advanced Statistics</h3>
+          <p data-i18n="cap-desc-5">Analyze your listening streaks, monthly summaries, and total hours listened with beautiful built-in graphic insights.</p>
+        </article>
+
+        <article class="capability-card reveal">
+          <div class="cap-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          </div>
+          <h3 data-i18n="cap-title-6">Data Portability</h3>
+          <p data-i18n="cap-desc-6">Export your settings, listening bookmarks, and player history as a `.lxb` configuration file to easily import to other devices.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Download Center Section -->
+    <section class="download-section reveal" id="download">
+      <div class="download-container single-download">
+        <div class="download-info centered-download">
+          <p class="eyebrow" data-i18n="download-eyebrow">GET THE OFFICIAL APP</p>
+          <h2 data-i18n="download-title">Start listening to your books today.</h2>
+          <p data-i18n="download-desc">Librixa is a personal player. You supply the audio files or connect your Google Drive — we supply the ultimate listening experience.</p>
+          
+          <div class="download-actions">
+            <!-- Google Play Store Button -->
+            <a href="https://play.google.com/store/apps/details?id=com.audio.librixa" target="_blank" rel="noopener" class="btn-download playstore-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.25v13.5a1.5 1.5 0 0 0 2.43 1.16l11-8.25a1.5 1.5 0 0 0 0-2.32l-11-8.25A1.5 1.5 0 0 0 3 5.25z"/></svg>
+              <div>
+                <span class="small-lbl" data-i18n="download-store-lbl">Get it on</span>
+                <span class="large-lbl" data-i18n="download-store-title">Google Play</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section reveal" id="faq">
+      <div class="section-header">
+        <p class="eyebrow" data-i18n="faq-eyebrow">GOT QUESTIONS?</p>
+        <h2 data-i18n="faq-title">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-accordion-container">
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span data-i18n="faq-q1">Does Librixa provide audiobooks?</span>
+            <span class="faq-plus">&#43;</span>
+          </button>
+          <div class="faq-panel">
+            <p data-i18n="faq-a1">No, Librixa is a media library organizer and player. It does not provide, host, sell, or distribute audiobooks. You connect your own audio files (stored locally on your device or in your Google Drive cloud account).</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span data-i18n="faq-q2">What audio file formats does Librixa support?</span>
+            <span class="faq-plus">&#43;</span>
+          </button>
+          <div class="faq-panel">
+            <p data-i18n="faq-a2">Librixa supports standard audio file formats, including MP3, M4B, M4A, AAC, and WAV. It also supports parsing chapters from files containing standardized chapter metadata (e.g., M4B files).</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span data-i18n="faq-q3">How does the Google Drive integration work?</span>
+            <span class="faq-plus">&#43;</span>
+          </button>
+          <div class="faq-panel">
+            <p data-i18n="faq-a3">You sign in with your Google account and grant Librixa secure read access to select directories on your Drive storage. Librixa parses files and directories dynamically, letting you stream books or download chapters for offline use without uploading anything to secondary servers.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span data-i18n="faq-q4">Is my reading and playback data secure?</span>
+            <span class="faq-plus">&#43;</span>
+          </button>
+          <div class="faq-panel">
+            <p data-i18n="faq-a4">Yes. Librixa keeps all your playback statistics, settings, and book configurations stored locally on your device. It doesn't send your data to any proprietary analytics servers, ensuring total privacy.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            <span data-i18n="faq-q5">How can I backup or transfer my library?</span>
+            <span class="faq-plus">&#43;</span>
+          </button>
+          <div class="faq-panel">
+            <p data-i18n="faq-a5">You can export a configuration file (`.lxb`) from settings which stores your reading logs, playlists, and bookmarks. Simply import this file on your new device inside Librixa to restore everything.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="brand">
+        <img src="assets/librixa-logo.png" alt="Librixa Logo" />
+        <span data-i18n="brand-name">LIBRIXA</span>
+      </div>
+      <p data-i18n="footer-copyright">© 2026 Librixa. Your audiobook library, your way.</p>
+    </div>
+    <div class="footer-bottom">
+      <p data-i18n="footer-dev">Designed and Developed by</p>
+      <img class="developer" src="assets/developer-logo.png" alt="Amr Emam — Software Developer" />
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
