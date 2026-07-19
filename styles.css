@@ -1,8 +1,8 @@
 /* Design System CSS Variable Definitions */
 :root {
   /* Fonts */
-  --font-main: 'DM Sans', sans-serif;
-  --font-accent: 'Outfit', sans-serif;
+  --font-main: 'Poppins', sans-serif;
+  --font-accent: 'Playfair Display', serif;
 
   /* Transitions */
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -11,38 +11,38 @@
 
 /* Dark Theme Variables (Default) */
 body.dark-theme {
-  --bg-color: #070b14;
-  --bg-color-alt: #0c1321;
-  --text-color: #f5f7fc;
-  --text-muted: #a8b2c6;
-  --panel-bg: #101a2e;
-  --panel-border: #22324d;
-  --orange-accent: #ff7a16;
-  --blue-accent: #1da9ff;
-  --header-bg: rgba(7, 11, 20, 0.8);
+  --bg-color: #0d1117;
+  --bg-color-alt: #161b22;
+  --text-color: #f5f7fa;
+  --text-muted: #8b949e;
+  --panel-bg: #161b22;
+  --panel-border: #21262d;
+  --orange-accent: #ff8a00;
+  --blue-accent: #0096ff;
+  --header-bg: rgba(13, 17, 23, 0.85);
   --shadow-color: rgba(0, 0, 0, 0.6);
   --shadow-light: rgba(0, 0, 0, 0.3);
-  --highlight-gradient: linear-gradient(135deg, #ff7a16, #1da9ff);
-  --card-hover-border: rgba(29, 169, 255, 0.3);
-  --btn-ghost-border: #30405a;
-  --btn-text-color: #15100b;
+  --highlight-gradient: linear-gradient(135deg, #ff8a00, #0096ff);
+  --card-hover-border: rgba(0, 150, 255, 0.35);
+  --btn-ghost-border: #30363d;
+  --btn-text-color: #0d1117;
 }
 
 /* Light Theme Variables */
 body.light-theme {
-  --bg-color: #f8fafc;
-  --bg-color-alt: #f1f5f9;
+  --bg-color: #f5f7fa;
+  --bg-color-alt: #e1e4e8;
   --text-color: #0f172a;
-  --text-muted: #475569;
+  --text-muted: #57606a;
   --panel-bg: #ffffff;
-  --panel-border: #e2e8f0;
-  --orange-accent: #ea580c;
-  --blue-accent: #0284c7;
-  --header-bg: rgba(248, 250, 252, 0.8);
-  --shadow-color: rgba(15, 23, 42, 0.15);
-  --shadow-light: rgba(15, 23, 42, 0.05);
-  --highlight-gradient: linear-gradient(135deg, #ea580c, #0284c7);
-  --card-hover-border: rgba(2, 132, 199, 0.2);
+  --panel-border: #d1d5da;
+  --orange-accent: #ff8a00;
+  --blue-accent: #0096ff;
+  --header-bg: rgba(245, 247, 250, 0.85);
+  --shadow-color: rgba(15, 23, 42, 0.12);
+  --shadow-light: rgba(15, 23, 42, 0.04);
+  --highlight-gradient: linear-gradient(135deg, #ff8a00, #0096ff);
+  --card-hover-border: rgba(0, 150, 255, 0.25);
   --btn-ghost-border: #cbd5e1;
   --btn-text-color: #ffffff;
 }
