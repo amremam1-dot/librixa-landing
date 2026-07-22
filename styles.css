@@ -2131,53 +2131,53 @@ body.rtl-ar .hero-actions {
    Privacy Policy & Developer Section Styles
    ========================================================================= */
 .privacy-container {
-  max-width: 900px;
-  margin: 120px auto 100px;
-  padding: 0 24px;
+  max-width: 860px;
+  margin: 100px auto 80px;
+  padding: 0 20px;
   position: relative;
   z-index: 10;
 }
 
 .privacy-card {
-  padding: 48px;
-  border-radius: 24px;
+  padding: 36px 40px;
+  border-radius: 20px;
 }
 
 .privacy-header {
-  margin-bottom: 40px;
+  margin-bottom: 24px;
   border-bottom: 1px solid var(--panel-border);
-  padding-bottom: 24px;
+  padding-bottom: 16px;
 }
 
 .privacy-header h1 {
-  font-size: clamp(32px, 4vw, 48px);
-  margin-top: 8px;
-  margin-bottom: 12px;
+  font-size: clamp(28px, 3.5vw, 38px);
+  margin-top: 4px;
+  margin-bottom: 6px;
 }
 
 .privacy-date {
   color: var(--text-muted);
-  font-size: 14px;
+  font-size: 13.5px;
 }
 
 .privacy-content {
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  line-height: 1.7;
+  gap: 20px;
+  line-height: 1.55;
 }
 
 .privacy-block h2 {
-  font-size: 20px;
+  font-size: 18px;
   color: var(--orange-accent);
-  margin-bottom: 12px;
+  margin-bottom: 6px;
 }
 
 .privacy-block p {
   color: var(--text-color);
-  opacity: 0.9;
-  margin-bottom: 12px;
-  font-size: 16px;
+  opacity: 0.92;
+  margin-bottom: 6px;
+  font-size: 15px;
 }
 
 .privacy-block ul {
@@ -2185,19 +2185,20 @@ body.rtl-ar .hero-actions {
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 6px;
 }
 
 .privacy-block li {
   position: relative;
-  padding-left: 24px;
+  padding-left: 20px;
   color: var(--text-muted);
-  font-size: 15px;
+  font-size: 14.5px;
+  line-height: 1.5;
 }
 
 body.rtl-ar .privacy-block li {
   padding-left: 0;
-  padding-right: 24px;
+  padding-right: 20px;
 }
 
 .privacy-block li::before {
