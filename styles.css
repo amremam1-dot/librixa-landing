@@ -1,8 +1,8 @@
 /* Design System CSS Variable Definitions */
 :root {
   /* Fonts */
-  --font-main: 'Poppins', sans-serif;
-  --font-accent: 'Playfair Display', serif;
+  --font-main: 'Cairo', 'Poppins', system-ui, -apple-system, sans-serif;
+  --font-accent: 'Cairo', sans-serif;
 
   /* Transitions */
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -60,11 +60,110 @@ html {
 
 body {
   background-color: var(--bg-color);
+  background-image: 
+    radial-gradient(at 10% 10%, rgba(255, 138, 0, 0.06) 0px, transparent 50%),
+    radial-gradient(at 90% 90%, rgba(0, 150, 255, 0.06) 0px, transparent 50%);
+  background-attachment: fixed;
   color: var(--text-color);
   font-family: var(--font-main);
   line-height: 1.5;
   transition: background-color 0.4s ease, color 0.4s ease;
   overflow-x: hidden;
+  position: relative;
+}
+
+/* Animated Ambient Gradient Background */
+.bg-gradient-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  will-change: transform;
+  pointer-events: none;
+}
+
+/* Dark Mode Ambient Orbs (Soft Subtle Glow) */
+body.dark-theme .orb-1 {
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(255, 138, 0, 0.16), rgba(234, 88, 12, 0));
+  top: -150px;
+  left: -150px;
+  animation: orbFloat1 8s ease-in-out infinite alternate;
+}
+
+body.dark-theme .orb-2 {
+  width: 750px;
+  height: 750px;
+  background: radial-gradient(circle, rgba(0, 150, 255, 0.15), rgba(59, 130, 246, 0));
+  top: 35%;
+  right: -200px;
+  animation: orbFloat2 10s ease-in-out infinite alternate;
+}
+
+body.dark-theme .orb-3 {
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(255, 126, 95, 0.12), rgba(255, 138, 0, 0));
+  bottom: -200px;
+  left: 25%;
+  animation: orbFloat3 9s ease-in-out infinite alternate;
+}
+
+/* Light Mode Ambient Orbs (Soft Subtle Glow) */
+body.light-theme .orb-1 {
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(255, 138, 0, 0.11), rgba(234, 88, 12, 0));
+  top: -150px;
+  left: -150px;
+  animation: orbFloat1 8s ease-in-out infinite alternate;
+}
+
+body.light-theme .orb-2 {
+  width: 750px;
+  height: 750px;
+  background: radial-gradient(circle, rgba(0, 150, 255, 0.10), rgba(59, 130, 246, 0));
+  top: 35%;
+  right: -200px;
+  animation: orbFloat2 10s ease-in-out infinite alternate;
+}
+
+body.light-theme .orb-3 {
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(255, 126, 95, 0.08), rgba(255, 138, 0, 0));
+  bottom: -200px;
+  left: 25%;
+  animation: orbFloat3 9s ease-in-out infinite alternate;
+}
+
+@keyframes orbFloat1 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(160px, 100px) scale(1.2); }
+  100% { transform: translate(-70px, 180px) scale(0.9); }
+}
+
+@keyframes orbFloat2 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-180px, -130px) scale(1.25); }
+  100% { transform: translate(90px, 100px) scale(0.9); }
+}
+
+@keyframes orbFloat3 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-110px, -150px) scale(1.18); }
+  100% { transform: translate(140px, -80px) scale(0.85); }
 }
 
 a {
@@ -109,16 +208,114 @@ h2 {
   letter-spacing: -0.03em;
 }
 
-/* Reveal on Scroll styling */
-.reveal {
+/* Dynamic Extra Animation System */
+.reveal,
+.reveal-scale,
+.reveal-left,
+.reveal-right,
+.reveal-flip {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: opacity, transform;
+  transition: 
+    opacity 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+    transform 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-delay: calc(var(--stagger-index, 0) * 0.12s);
 }
 
-.reveal.active {
+.reveal {
+  transform: translateY(65px);
+}
+
+.reveal-left {
+  transform: translateX(-65px) rotate(-2deg);
+}
+
+.reveal-right {
+  transform: translateX(65px) rotate(2deg);
+}
+
+.reveal-scale {
+  transform: scale(0.82);
+}
+
+.reveal-flip {
+  transform: perspective(1000px) rotateX(25deg) translateY(50px);
+}
+
+.reveal.active,
+.reveal-left.active,
+.reveal-right.active,
+.reveal-scale.active,
+.reveal-flip.active {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate(0) rotate(0deg) scale(1);
+}
+
+/* Continuous Floating Levitation Effect for Mockup Cards & Badges */
+.clean-screen-card,
+.hero-screen-card {
+  animation: floatLevitate 5s ease-in-out infinite alternate;
+}
+
+@keyframes floatLevitate {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-12px);
+  }
+}
+
+/* Glowing Border Pulse Animation for Feature Cards */
+.feature-item,
+.capability-card,
+.download-container {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.feature-item:hover,
+.capability-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 45px rgba(255, 138, 0, 0.25), 0 0 25px rgba(0, 150, 255, 0.15);
+  border-color: var(--orange-accent);
+}
+
+/* Button Shimmer Shine Effect */
+.button.primary,
+.btn-download.playstore-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.button.primary::after,
+.btn-download.playstore-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 70%
+  );
+  transform: rotate(30deg);
+  animation: shimmerPass 4s infinite;
+}
+
+@keyframes shimmerPass {
+  0% { transform: translateX(-100%) rotate(30deg); }
+  30%, 100% { transform: translateX(100%) rotate(30deg); }
+}
+
+/* Hover Icon Rotation */
+.button:hover svg,
+.btn-download:hover svg,
+.social-chip:hover svg,
+.footer-social-icon:hover svg {
+  transform: scale(1.2) rotate(-6deg);
 }
 
 /* Header & Navigation */
@@ -327,7 +524,143 @@ body.light-theme .moon-icon {
 .hero-actions {
   display: flex;
   gap: 16px;
-  margin-bottom: 48px;
+  margin-bottom: 24px;
+}
+
+/* User Guide & Social Links Styles */
+.button.guide-btn {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  color: var(--text-color);
+}
+
+.button.guide-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--orange-accent);
+  color: var(--orange-accent);
+  transform: translateY(-3px);
+}
+
+.social-links-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.social-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 99px;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.social-chip svg {
+  width: 16px;
+  height: 16px;
+  transition: var(--transition-smooth);
+}
+
+.social-chip:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.social-chip.facebook:hover {
+  background: #1877f2;
+  border-color: #1877f2;
+}
+
+.social-chip.linkedin:hover {
+  background: #0a66c2;
+  border-color: #0a66c2;
+}
+
+.social-chip.instagram:hover {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  border-color: #dc2743;
+}
+
+.social-chip.youtube:hover {
+  background: #ff0000;
+  border-color: #ff0000;
+}
+
+/* Footer Social Icons Bar */
+.footer-social-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer-social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  color: var(--text-muted);
+  transition: var(--transition-smooth);
+  text-decoration: none;
+}
+
+.footer-social-icon svg {
+  width: 18px;
+  height: 18px;
+  transition: var(--transition-smooth);
+}
+
+.footer-social-icon:hover {
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.footer-social-icon.guide:hover {
+  background: var(--orange-accent);
+  border-color: var(--orange-accent);
+}
+
+.footer-social-icon.facebook:hover {
+  background: #1877f2;
+  border-color: #1877f2;
+}
+
+.footer-social-icon.linkedin:hover {
+  background: #0a66c2;
+  border-color: #0a66c2;
+}
+
+.footer-social-icon.instagram:hover {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  border-color: #dc2743;
+}
+
+.footer-social-icon.youtube:hover {
+  background: #ff0000;
+  border-color: #ff0000;
+}
+
+.btn-download.guide-download-btn {
+  border: 1px solid var(--panel-border);
+  background: var(--panel-bg);
+}
+
+.btn-download.guide-download-btn:hover {
+  border-color: var(--orange-accent);
+  background: rgba(255, 126, 95, 0.15);
 }
 
 .trust {
@@ -364,8 +697,9 @@ body.light-theme .moon-icon {
   height: 320px;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.15;
+  opacity: 0.25;
   z-index: 1;
+  transition: opacity 0.5s ease, filter 0.5s ease, transform 0.5s ease;
 }
 
 .glow-orange {
@@ -380,30 +714,86 @@ body.light-theme .moon-icon {
   bottom: 15%;
 }
 
-/* Premium Phone Frame (Interactive Player Simulator) */
-.phone-frame {
+.hero-art:hover .glow-orange,
+.hero-art:hover .glow-blue {
+  opacity: 0.65;
+  filter: blur(55px);
+  transform: scale(1.35);
+}
+
+/* Realistic Flagship Android Phone Mockup Frame */
+.hero-phone-frame {
   position: relative;
-  width: 290px;
-  height: 580px;
+  width: 285px;
+  height: 607px;
   border-radius: 40px;
-  background-color: #0d121f;
-  border: 10px solid #04070e;
-  box-shadow: 0 30px 80px var(--shadow-color), 0 0 0 2px rgba(97, 113, 138, 0.4);
+  background-color: #060912;
+  border: 9px solid #161c2c;
+  box-shadow: 
+    0 25px 70px rgba(0, 0, 0, 0.7), 
+    0 0 0 2px rgba(255, 126, 95, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12);
   z-index: 2;
-  overflow: hidden;
 }
 
-.phone-frame .phone-screen-container {
-  width: 100%;
-  height: 100%;
-  position: relative;
+/* Side Hardware Buttons (Volume & Power) */
+.hero-phone-frame::before {
+  content: '';
+  position: absolute;
+  right: -13px;
+  top: 110px;
+  width: 4px;
+  height: 55px;
+  background: #252e42;
+  border-radius: 0 4px 4px 0;
+  box-shadow: 1px 0 2px rgba(0, 0, 0, 0.5);
 }
 
+.hero-phone-frame::after {
+  content: '';
+  position: absolute;
+  right: -13px;
+  top: 185px;
+  width: 4px;
+  height: 35px;
+  background: var(--orange-accent);
+  border-radius: 0 4px 4px 0;
+  box-shadow: 1px 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.phone-speaker-grill {
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 4px;
+  background-color: #2a3449;
+  border-radius: 99px;
+  z-index: 20;
+}
+
+.phone-camera-hole {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  background-color: #000000;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  z-index: 20;
+  box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.9);
+}
+
+.phone-frame .phone-screen-container,
 .hero-screen-container {
   width: 100%;
   height: 100%;
   background-color: #0a101c;
   overflow: hidden;
+  position: relative;
 }
 
 .hero-screen-container img {
@@ -1171,7 +1561,7 @@ body.light-theme .feature-card.featured {
   line-height: 1;
 }
 
-.faq-item.active .faq-plus {
+.faq-item.open .faq-plus {
   transform: rotate(45deg);
 }
 
@@ -1182,7 +1572,7 @@ body.light-theme .feature-card.featured {
   border-top: 1px solid transparent;
 }
 
-.faq-item.active .faq-panel {
+.faq-item.open .faq-panel {
   border-top-color: var(--panel-border);
 }
 
@@ -1222,15 +1612,30 @@ body.light-theme .feature-card.featured {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-muted);
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--panel-border);
+}
+
+.dev-credits {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dev-name {
+  color: var(--orange-accent);
+  font-weight: 700;
 }
 
 .developer {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border-radius: 10px;
   object-fit: cover;
+  border: 1px solid var(--panel-border);
 }
 
 /* App Screenshots Gallery Section */
@@ -1248,6 +1653,7 @@ body.light-theme .feature-card.featured {
 
 .gallery-scroll {
   display: flex;
+  direction: ltr;
   gap: 30px;
   overflow-x: auto;
   padding: 20px 0 40px;
@@ -1490,4 +1896,233 @@ body.rtl-ar .hero-actions {
   body.rtl-ar .nav .lang-toggle-btn {
     align-self: flex-end;
   }
+}
+
+/* =========================================================================
+   Version Chip & Release Badge
+   ========================================================================= */
+.version-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 126, 95, 0.12);
+  border: 1px solid rgba(255, 126, 95, 0.3);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--orange-accent);
+  margin-bottom: 16px;
+  box-shadow: 0 4px 15px rgba(255, 126, 95, 0.15);
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--orange-accent);
+  box-shadow: 0 0 10px var(--orange-accent);
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  50% { transform: scale(1.3); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.8; }
+}
+
+/* =========================================================================
+   Clean Glass Display Cards (No Phone Frame Bezel)
+   ========================================================================= */
+.clean-screen-card {
+  position: relative;
+  border-radius: 20px;
+  background: rgba(13, 18, 31, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 126, 95, 0.12);
+  z-index: 2;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+}
+
+.clean-screen-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(255, 138, 0, 0.45);
+  box-shadow: 
+    0 40px 100px rgba(0, 0, 0, 0.8), 
+    0 0 65px rgba(255, 138, 0, 0.55),
+    0 0 110px rgba(0, 150, 255, 0.35);
+}
+
+.hero-screen-card {
+  width: 280px;
+  height: 607px;
+  max-width: 90vw;
+  position: relative;
+}
+
+.hero-screen-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 20px;
+}
+
+.hero-screen-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 20px;
+}
+
+.showcase-screen-card {
+  width: 280px;
+  height: 607px;
+  max-width: 90vw;
+  position: relative;
+}
+
+.showcase-screen-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+}
+
+.showcase-screen-card img.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* =========================================================================
+   Gallery Screen Card (No Phone Frame)
+   ========================================================================= */
+.gallery-card {
+  position: relative;
+  width: 210px;
+  border-radius: 16px;
+  background: rgba(13, 18, 31, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 126, 95, 0.08);
+  overflow: hidden;
+  margin-bottom: 14px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 16px;
+}
+
+.gallery-item:hover .gallery-card {
+  transform: translateY(-6px);
+  border-color: rgba(255, 126, 95, 0.4);
+  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 126, 95, 0.2);
+}
+
+/* =========================================================================
+   Buttons Customization (APK & YouTube)
+   ========================================================================= */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.hero-actions .button.secondary-apk {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-color);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  transition: var(--transition-smooth);
+}
+
+.hero-actions .button.secondary-apk svg {
+  width: 18px;
+  height: 18px;
+}
+
+.hero-actions .button.secondary-apk:hover {
+  background: rgba(255, 126, 95, 0.15);
+  border-color: var(--orange-accent);
+  color: var(--orange-accent);
+  transform: translateY(-2px);
+}
+
+.hero-actions .button.youtube-btn {
+  background: rgba(255, 0, 0, 0.12);
+  border: 1px solid rgba(255, 0, 0, 0.25);
+  color: #ff4e4e;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  transition: var(--transition-smooth);
+}
+
+.hero-actions .button.youtube-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.hero-actions .button.youtube-btn:hover {
+  background: rgba(255, 0, 0, 0.25);
+  border-color: #ff0000;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+}
+
+.download-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.btn-download.apk-btn {
+  background: rgba(255, 126, 95, 0.12);
+  border: 1px solid rgba(255, 126, 95, 0.3);
+}
+
+.btn-download.apk-btn:hover {
+  background: var(--orange-accent);
+  border-color: var(--orange-accent);
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(255, 126, 95, 0.4);
+}
+
+.btn-download.youtube-btn {
+  background: rgba(255, 0, 0, 0.12);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  color: #ff4e4e;
+}
+
+.btn-download.youtube-btn:hover {
+  background: #ff0000;
+  border-color: #ff0000;
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(255, 0, 0, 0.4);
 }

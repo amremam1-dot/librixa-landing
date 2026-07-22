@@ -18,24 +18,37 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // =========================================================================
-  // 2. Light / Dark Theme Switcher
+  // 2. Light / Dark Theme Switcher & Hero Image Switcher
   // =========================================================================
   const themeToggleBtn = document.getElementById('theme-toggle');
   const body = document.body;
+  const heroMainImg = document.getElementById('hero-main-img');
 
-  // Check saved theme
+  function updateHeroImage(theme) {
+    if (heroMainImg) {
+      if (theme === 'light-theme') {
+        heroMainImg.src = 'assets/hero-main-light.jpg';
+      } else {
+        heroMainImg.src = 'assets/hero-main.jpg';
+      }
+    }
+  }
+
+  function applyTheme(theme) {
+    const activeLang = body.classList.contains('rtl-ar') ? 'rtl-ar' : 'ltr-en';
+    body.className = `${theme} ${activeLang}`;
+    localStorage.setItem('librixa-theme', theme);
+    updateHeroImage(theme);
+  }
+
+  // Initial theme check
   const savedTheme = localStorage.getItem('librixa-theme') || 'dark-theme';
-  body.className = savedTheme;
+  applyTheme(savedTheme);
 
   themeToggleBtn?.addEventListener('click', () => {
     const isDark = body.classList.contains('dark-theme');
     const newTheme = isDark ? 'light-theme' : 'dark-theme';
-    
-    // Preserve language class when switching theme
-    const activeLang = body.classList.contains('rtl-ar') ? 'rtl-ar' : 'ltr-en';
-    body.className = `${newTheme} ${activeLang}`;
-    
-    localStorage.setItem('librixa-theme', newTheme);
+    applyTheme(newTheme);
   });
 
   // =========================================================================
@@ -81,14 +94,14 @@ document.addEventListener('DOMContentLoaded', () => {
       "gallery-eyebrow": "SCREENSHOTS GALLERY",
       "gallery-title": "Real App Interfaces",
       "gallery-lead": "Take a closer look at the actual screens and design of the Librixa app. Clean, modern, and built with utility in mind.",
-      "gallery-item1": "Library Feed",
-      "gallery-item2": "Audiobook Info",
-      "gallery-item3": "Cloud Storage",
-      "gallery-item4": "Folders List",
-      "gallery-item5": "Downloads",
-      "gallery-item6": "Chapter Details",
-      "gallery-item7": "Bookshelf Grid",
-      "gallery-item8": "Listening Stats",
+      "gallery-item1": "Librixa Overview",
+      "gallery-item2": "Focused Player",
+      "gallery-item3": "Immersive Experience",
+      "gallery-item4": "Search & Chapters",
+      "gallery-item5": "Cloud & Local Sync",
+      "gallery-item6": "Bookmarks & Favorites",
+      "gallery-item7": "Light & Drive Mode",
+      "gallery-item8": "Dark Night Mode",
       "caps-eyebrow": "ONE APP, COMPLETE CONTROL",
       "caps-title": "Built around every part of audiobook listening.",
       "cap-title-1": "Google Drive Sync",
@@ -103,11 +116,19 @@ document.addEventListener('DOMContentLoaded', () => {
       "cap-desc-5": "Analyze your listening streaks, monthly summaries, and total hours listened with beautiful built-in graphic insights.",
       "cap-title-6": "Data Portability",
       "cap-desc-6": "Export your settings, listening bookmarks, and player history as a `.lxb` configuration file to easily import to other devices.",
+      "nav-guide": "User Guide",
+      "hero-btn-guide": "User Guide (PDF)",
       "download-eyebrow": "GET THE OFFICIAL APP",
       "download-title": "Start listening to your books today.",
       "download-desc": "Librixa is a personal player. You supply the audio files or connect your Google Drive — we supply the ultimate listening experience.",
       "download-store-lbl": "Get it on",
       "download-store-title": "Google Play",
+      "download-guide-lbl": "Documentation",
+      "download-guide-title": "User Guide (PDF)",
+      "download-youtube-lbl": "Watch on",
+      "download-youtube-title": "YouTube",
+      "hero-btn-youtube": "YouTube Channel",
+      "footer-guide": "User Guide (PDF)",
       "faq-eyebrow": "GOT QUESTIONS?",
       "faq-title": "Frequently Asked Questions",
       "faq-q1": "Does Librixa provide audiobooks?",
@@ -162,14 +183,14 @@ document.addEventListener('DOMContentLoaded', () => {
       "gallery-eyebrow": "معرض لقطات الشاشة",
       "gallery-title": "واجهات حقيقية من داخل التطبيق",
       "gallery-lead": "ألقِ نظرة عن قرب على شاشات وتصميم تطبيق ليبريكسا. واجهات نظيفة وعصرية ومصممة بأعلى درجات العملية.",
-      "gallery-item1": "قائمة المكتبة",
-      "gallery-item2": "تفاصيل الكتاب",
-      "gallery-item3": "التخزين السحابي",
-      "gallery-item4": "قائمة المجلدات",
-      "gallery-item5": "التنزيلات",
-      "gallery-item6": "تفاصيل الفصول",
-      "gallery-item7": "رفوف الكتب",
-      "gallery-item8": "إحصائيات الاستماع",
+      "gallery-item1": "نظرة عامة على التطبيق",
+      "gallery-item2": "مشغل الصوت الفعال",
+      "gallery-item3": "تجربة استماع غامرة",
+      "gallery-item4": "البحث الذكي والفصول",
+      "gallery-item5": "المزامنة السحابية والمحلية",
+      "gallery-item6": "العلامات المرجعية والمفضلة",
+      "gallery-item7": "النمط الفاتح ووضع القيادة",
+      "gallery-item8": "النمط الليلي الداكن",
       "caps-eyebrow": "تطبيق واحد، تحكم كامل",
       "caps-title": "مصمم ليناسب كل تفاصيل الاستماع للكتب الصوتية.",
       "cap-title-1": "مزامنة Google Drive",
@@ -184,11 +205,19 @@ document.addEventListener('DOMContentLoaded', () => {
       "cap-desc-5": "حلل سلسلة أيام استماعك، والملخصات الشهرية، وإجمالي ساعات الاستماع عبر رسومات بيانية جذابة مدمجة بالتطبيق.",
       "cap-title-6": "نقل وحفظ البيانات",
       "cap-desc-6": "صدر إعداداتك وعلاماتك المرجعية وسجل استماعك كملف تهيئة (.lxb) لتستورده بسهولة على أي جهاز آخر.",
+      "nav-guide": "دليل المستخدم",
+      "hero-btn-guide": "دليل المستخدم (PDF)",
       "download-eyebrow": "احصل على التطبيق الرسمي",
       "download-title": "ابدأ الاستماع إلى كتبك المفضلة اليوم.",
       "download-desc": "ليبريكسا هو مشغل كتب صوتية شخصي. أنت توفر الملفات الصوتية أو تربط مجلدات سحابية — ونحن نوفر لك أفضل تجربة استماع.",
       "download-store-lbl": "حمل التطبيق من",
       "download-store-title": "جوجل بلاي",
+      "download-guide-lbl": "التوثيق والشرح",
+      "download-guide-title": "دليل المستخدم (PDF)",
+      "download-youtube-lbl": "شاهدنا على",
+      "download-youtube-title": "يوتيوب",
+      "hero-btn-youtube": "قناة يوتيوب",
+      "footer-guide": "دليل المستخدم (PDF)",
       "faq-eyebrow": "لديك استفسار؟",
       "faq-title": "الأسئلة الشائعة",
       "faq-q1": "هل يوفر تطبيق ليبريكسا كتباً صوتية جاهزة؟",
@@ -263,9 +292,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const showcaseImg = document.getElementById('showcase-img');
 
   const tabImages = {
-    player: 'assets/player.jpg',
-    stats: 'assets/stats.jpg',
-    settings: 'assets/settings.jpg'
+    player: 'assets/showcase-player.jpg',
+    stats: 'assets/showcase-stats.jpg',
+    settings: 'assets/showcase-settings.jpg'
   };
 
   tabs.forEach(tab => {
@@ -301,27 +330,38 @@ document.addEventListener('DOMContentLoaded', () => {
     trigger.addEventListener('click', () => {
       const faqItem = trigger.parentElement;
       const faqPanel = trigger.nextElementSibling;
-      const isActive = faqItem.classList.contains('active');
+      const isOpen = faqItem.classList.contains('open');
 
       // Close all other panels
       document.querySelectorAll('.faq-item').forEach(item => {
-        item.classList.remove('active');
+        item.classList.remove('open');
         const panel = item.querySelector('.faq-panel');
         if (panel) panel.style.maxHeight = '0';
       });
 
       // Toggle this panel
-      if (!isActive) {
-        faqItem.classList.add('active');
+      if (!isOpen) {
+        faqItem.classList.add('open');
         faqPanel.style.maxHeight = `${faqPanel.scrollHeight}px`;
       }
     });
   });
 
   // =========================================================================
-  // 6. Scroll-Reveal Animations (Intersection Observer)
+  // 6. Enhanced Dynamic Scroll-Reveal & Stagger Animations
   // =========================================================================
-  const revealElements = document.querySelectorAll('.reveal');
+  // Auto-assign stagger indexes to lists & grid containers
+  const staggerContainers = document.querySelectorAll('.features-grid, .capabilities-grid, .gallery-scroll, .faq-accordion-container, .hero-actions, .social-links-row');
+  staggerContainers.forEach(container => {
+    Array.from(container.children).forEach((child, index) => {
+      child.style.setProperty('--stagger-index', index);
+      if (!child.classList.contains('reveal') && !child.classList.contains('reveal-scale') && !child.classList.contains('reveal-left') && !child.classList.contains('reveal-right')) {
+        child.classList.add('reveal');
+      }
+    });
+  });
+
+  const revealElements = document.querySelectorAll('.reveal, .reveal-scale, .reveal-left, .reveal-right');
 
   const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
@@ -331,8 +371,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0.08,
+    rootMargin: '0px 0px -40px 0px'
   });
 
   revealElements.forEach(el => revealObserver.observe(el));

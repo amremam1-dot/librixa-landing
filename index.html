@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Librixa — your premium personal audiobook library. Stream from Google Drive, organize local audio files, and enjoy beautiful insights." />
   <title>Librixa | Premium Audiobook Library & Player</title>
+  <!-- Favicon / Website Icon -->
+  <link rel="icon" type="image/png" href="assets/librixa-logo.png" />
+  <link rel="apple-touch-icon" href="assets/librixa-logo.png" />
   <link rel="stylesheet" href="styles.css" />
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,6 +15,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Cairo:wght@400;600;700;850&display=swap" rel="stylesheet">
 </head>
 <body class="dark-theme">
+  <!-- Animated Ambient Gradient Background Orbs -->
+  <div class="bg-gradient-wrapper" aria-hidden="true">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+  </div>
   <!-- Sticky Header -->
   <header class="site-header">
     <div class="header-container">
@@ -25,6 +34,7 @@
       <nav class="nav" aria-label="Primary navigation">
         <a href="#features" data-i18n="nav-features">Features</a>
         <a href="#interactive-showcase" data-i18n="nav-showcase">Showcase</a>
+        <a href="https://raw.githubusercontent.com/amremam1-dot/librixa-landing/a156dd2f09af0b331af08981f371c9fb9be5da1b/Librixa_User_Guide.pdf" target="_blank" rel="noopener" data-i18n="nav-guide">User Guide</a>
         <a href="#download" data-i18n="nav-download">Get Librixa</a>
         <a href="#faq" data-i18n="nav-faq">FAQ</a>
         
@@ -54,7 +64,28 @@
             Get Librixa
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>
-          <a class="button ghost" href="#" target="_blank" rel="noopener" data-i18n="hero-btn-web-app">Launch Web Player</a>
+          <a class="button guide-btn" href="https://raw.githubusercontent.com/amremam1-dot/librixa-landing/a156dd2f09af0b331af08981f371c9fb9be5da1b/Librixa_User_Guide.pdf" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+            <span data-i18n="hero-btn-guide">User Guide (PDF)</span>
+          </a>
+        </div>
+        <div class="social-links-row">
+          <a href="https://www.facebook.com/librixa" target="_blank" rel="noopener" class="social-chip facebook" title="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12c0-6.63-5.37-12-12-12S0 5.37 0 12c0 5.98 4.38 10.94 10.13 11.84v-8.37H7.08V12h3.05V9.36c0-3.01 1.79-4.67 4.53-4.67 1.31 0 2.68.23 2.68.23v2.96h-1.52c-1.49 0-1.95.92-1.95 1.87V12h3.34l-.54 3.47h-2.8v8.37C19.62 22.94 24 17.98 24 12z"/></svg>
+            <span>Facebook</span>
+          </a>
+          <a href="https://linkedin.com/company/librixa" target="_blank" rel="noopener" class="social-chip linkedin" title="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://www.instagram.com/librixaapp/" target="_blank" rel="noopener" class="social-chip instagram" title="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            <span>Instagram</span>
+          </a>
+          <a href="https://www.youtube.com/@librixaa" target="_blank" rel="noopener" class="social-chip youtube" title="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            <span>YouTube</span>
+          </a>
         </div>
         <div class="trust">
           <span class="trust-item" data-i18n="hero-trust-local">
@@ -72,13 +103,13 @@
         </div>
       </div>
       
-      <!-- Device Widget with Real Screenshot -->
+      <!-- Android Phone Frame Widget (Only for Main Screen Screenshot) -->
       <div class="hero-art">
         <div class="glow glow-orange"></div>
         <div class="glow glow-blue"></div>
-        <div class="phone-frame">
+        <div class="clean-screen-card hero-screen-card">
           <div class="hero-screen-container">
-            <img src="assets/player.jpg" alt="Librixa Audiobook Player Screen" />
+            <img id="hero-main-img" src="assets/hero-main.jpg" alt="Librixa Audiobook Main Screen" />
           </div>
         </div>
       </div>
@@ -103,7 +134,7 @@
 
         <article class="feature-card featured reveal">
           <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 0 .57-8.38l-.57.81"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
           </div>
           <h3 data-i18n="feat2-title">Pick up where you stopped.</h3>
           <p data-i18n="feat2-desc">Librixa automatically remembers your exact playback position. Save unlimited custom bookmarks to revisit key moments at any time.</p>
@@ -159,10 +190,8 @@
         </div>
 
         <div class="showcase-media">
-          <div class="phone-mockup">
-            <div class="phone-screen-container">
-              <img id="showcase-img" src="assets/player.jpg" alt="Focused Player Showcase" class="active" />
-            </div>
+          <div class="clean-screen-card showcase-screen-card">
+            <img id="showcase-img" src="assets/showcase-player.jpg" alt="Focused Player Showcase" class="active" />
           </div>
         </div>
       </div>
@@ -178,52 +207,52 @@
       <div class="gallery-wrapper">
         <div class="gallery-scroll">
           <div class="gallery-item">
-            <div class="gallery-phone">
-              <img src="assets/Screenshot_20260714_143618.jpg" alt="Library Feed" />
+            <div class="gallery-card">
+              <img src="assets/1.png" alt="Librixa Overview" />
             </div>
-            <span data-i18n="gallery-item1">Library Feed</span>
+            <span data-i18n="gallery-item1">Librixa Overview</span>
           </div>
           <div class="gallery-item">
-            <div class="gallery-phone">
-              <img src="assets/Screenshot_20260714_143647.jpg" alt="Audiobook View" />
+            <div class="gallery-card">
+              <img src="assets/2.png" alt="Focused Player" />
             </div>
-            <span data-i18n="gallery-item2">Audiobook Info</span>
+            <span data-i18n="gallery-item2">Focused Player</span>
           </div>
           <div class="gallery-item">
-            <div class="gallery-phone">
-              <img src="assets/Screenshot_20260714_143714.jpg" alt="Cloud Explorer" />
+            <div class="gallery-card">
+              <img src="assets/3.png" alt="Immersive Experience" />
             </div>
-            <span data-i18n="gallery-item3">Cloud Storage</span>
+            <span data-i18n="gallery-item3">Immersive Experience</span>
           </div>
           <div class="gallery-item">
-            <div class="gallery-phone">
-              <img src="assets/Screenshot_20260714_143737.jpg" alt="Folders List" />
+            <div class="gallery-card">
+              <img src="assets/4.png" alt="Smart Search & Chapters" />
             </div>
-            <span data-i18n="gallery-item4">Folders List</span>
+            <span data-i18n="gallery-item4">Search & Chapters</span>
           </div>
           <div class="gallery-item">
-            <div class="gallery-phone">
-              <img src="assets/Screenshot_20260714_143746.jpg" alt="Downloads Manager" />
+            <div class="gallery-card">
+              <img src="assets/5.png" alt="Cloud & Local Sync" />
             </div>
-            <span data-i18n="gallery-item5">Downloads</span>
+            <span data-i18n="gallery-item5">Cloud & Local Sync</span>
           </div>
           <div class="gallery-item">
-            <div class="gallery-phone">
-              <img src="assets/Screenshot_20260714_143753.jpg" alt="Chapter Selection" />
+            <div class="gallery-card">
+              <img src="assets/6.png" alt="Bookmarks & Favorites" />
             </div>
-            <span data-i18n="gallery-item6">Chapter Details</span>
+            <span data-i18n="gallery-item6">Bookmarks & Favorites</span>
           </div>
           <div class="gallery-item">
-            <div class="gallery-phone">
-              <img src="assets/bookshelf.jpg" alt="Bookshelf Grid" />
+            <div class="gallery-card">
+              <img src="assets/7.png" alt="Light & Drive Mode" />
             </div>
-            <span data-i18n="gallery-item7">Bookshelf Grid</span>
+            <span data-i18n="gallery-item7">Light & Drive Mode</span>
           </div>
           <div class="gallery-item">
-            <div class="gallery-phone">
-              <img src="assets/Screenshot_20260714_143910.jpg" alt="History & Stats" />
+            <div class="gallery-card">
+              <img src="assets/8.png" alt="Dark Night Mode" />
             </div>
-            <span data-i18n="gallery-item8">Listening Stats</span>
+            <span data-i18n="gallery-item8">Dark Night Mode</span>
           </div>
         </div>
       </div>
@@ -304,6 +333,24 @@
                 <span class="large-lbl" data-i18n="download-store-title">Google Play</span>
               </div>
             </a>
+
+            <!-- User Guide PDF Button -->
+            <a href="https://raw.githubusercontent.com/amremam1-dot/librixa-landing/a156dd2f09af0b331af08981f371c9fb9be5da1b/Librixa_User_Guide.pdf" target="_blank" rel="noopener" class="btn-download guide-download-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+              <div>
+                <span class="small-lbl" data-i18n="download-guide-lbl">Documentation</span>
+                <span class="large-lbl" data-i18n="download-guide-title">User Guide (PDF)</span>
+              </div>
+            </a>
+
+            <!-- Official YouTube Channel Button -->
+            <a href="https://www.youtube.com/@librixaa" target="_blank" rel="noopener" class="btn-download youtube-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              <div>
+                <span class="small-lbl" data-i18n="download-youtube-lbl">Watch on</span>
+                <span class="large-lbl" data-i18n="download-youtube-title">YouTube</span>
+              </div>
+            </a>
           </div>
         </div>
       </div>
@@ -377,10 +424,30 @@
         <img src="assets/librixa-logo.png" alt="Librixa Logo" />
         <span data-i18n="brand-name">LIBRIXA</span>
       </div>
+      <div class="footer-social-bar">
+        <a href="https://raw.githubusercontent.com/amremam1-dot/librixa-landing/a156dd2f09af0b331af08981f371c9fb9be5da1b/Librixa_User_Guide.pdf" target="_blank" rel="noopener" class="footer-social-icon guide" title="User Guide (PDF)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+        </a>
+        <a href="https://www.facebook.com/librixa" target="_blank" rel="noopener" class="footer-social-icon facebook" title="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12c0-6.63-5.37-12-12-12S0 5.37 0 12c0 5.98 4.38 10.94 10.13 11.84v-8.37H7.08V12h3.05V9.36c0-3.01 1.79-4.67 4.53-4.67 1.31 0 2.68.23 2.68.23v2.96h-1.52c-1.49 0-1.95.92-1.95 1.87V12h3.34l-.54 3.47h-2.8v8.37C19.62 22.94 24 17.98 24 12z"/></svg>
+        </a>
+        <a href="https://linkedin.com/company/librixa" target="_blank" rel="noopener" class="footer-social-icon linkedin" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/librixaapp/" target="_blank" rel="noopener" class="footer-social-icon instagram" title="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@librixaa" target="_blank" rel="noopener" class="footer-social-icon youtube" title="YouTube">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+      </div>
       <p data-i18n="footer-copyright">© 2026 Librixa. Your audiobook library, your way.</p>
     </div>
     <div class="footer-bottom">
-      <p data-i18n="footer-dev">Designed and Developed by</p>
+      <p class="dev-credits">
+        <span data-i18n="footer-dev">Designed and Developed by</span>
+        <strong class="dev-name">Amr Emam</strong>
+      </p>
       <img class="developer" src="assets/developer-logo.png" alt="Amr Emam — Software Developer" />
     </div>
   </footer>
