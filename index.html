@@ -9,6 +9,44 @@
   <link rel="icon" type="image/png" href="assets/librixa-logo.png" />
   <link rel="apple-touch-icon" href="assets/librixa-logo.png" />
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://amremam1-dot.github.io/librixa-landing/" />
+  <meta property="og:title" content="Librixa | Premium Audiobook Library & Player" />
+  <meta property="og:description" content="Librixa — your premium personal audiobook library. Stream from Google Drive, organize local audio files, and enjoy beautiful insights." />
+  <meta property="og:image" content="https://amremam1-dot.github.io/librixa-landing/assets/hero-main.webp" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://amremam1-dot.github.io/librixa-landing/" />
+  <meta name="twitter:title" content="Librixa | Premium Audiobook Library & Player" />
+  <meta name="twitter:description" content="Librixa — your premium personal audiobook library. Stream from Google Drive, organize local audio files, and enjoy beautiful insights." />
+  <meta name="twitter:image" content="https://amremam1-dot.github.io/librixa-landing/assets/hero-main.webp" />
+
+  <!-- SoftwareApplication JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Librixa",
+    "operatingSystem": "Android",
+    "applicationCategory": "MultimediaApplication",
+    "description": "Librixa is a premium personal audiobook library and player for Android with direct Google Drive streaming, local file playback, and privacy-first listening insights.",
+    "url": "https://amremam1-dot.github.io/librixa-landing/",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.example.audioshelf",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Amr Emam"
+    }
+  }
+  </script>
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,6 +97,7 @@
         <p class="eyebrow" data-i18n="hero-eyebrow">YOUR AUDIOBOOK LIBRARY</p>
         <h1 data-i18n="hero-title">Listen to the books you love. <em>Your way.</em></h1>
         <p class="lead" data-i18n="hero-lead">Librixa brings every audiobook into one calm, organized experience — whether it lives on your phone or in your Google Drive storage.</p>
+        <p class="sub-lead-differentiation" data-i18n="differentiation-text">Unlike conventional audiobook apps that require monthly subscriptions or remote server setups, Librixa offers direct Google Drive streaming and local-first privacy with zero recurring fees.</p>
         <div class="hero-actions">
           <a class="button primary" href="#download" data-i18n="hero-btn-download">
             Get Librixa
@@ -109,9 +148,17 @@
         <div class="glow glow-blue"></div>
         <div class="clean-screen-card hero-screen-card">
           <div class="hero-screen-container">
-            <img id="hero-main-img" src="assets/hero-main.jpg" alt="Librixa Audiobook Main Screen" />
+            <img id="hero-main-img" src="assets/hero-main.webp" alt="Librixa Audiobook Main Screen" loading="eager" />
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Developer Motivation Section -->
+    <section class="why-built-section reveal">
+      <div class="why-built-card">
+        <h2 data-i18n="why-built-title">Why I Built Librixa</h2>
+        <p data-i18n="why-built-desc">I built Librixa because I wanted a clean, hassle-free way to listen to my personal audiobook collection stored on Google Drive and local storage without subscriptions or cloud lock-in. Existing players either locked features behind monthly fees or lacked direct cloud streaming for large audio files. Librixa is built local-first and privacy-focused, giving you complete control over your own audiobooks.</p>
       </div>
     </section>
 
@@ -191,7 +238,7 @@
 
         <div class="showcase-media">
           <div class="clean-screen-card showcase-screen-card">
-            <img id="showcase-img" src="assets/showcase-player.jpg" alt="Focused Player Showcase" class="active" />
+            <img id="showcase-img" src="assets/showcase-player.webp" alt="Focused Player Showcase" class="active" loading="lazy" />
           </div>
         </div>
       </div>
@@ -208,49 +255,49 @@
         <div class="gallery-scroll">
           <div class="gallery-item">
             <div class="gallery-card">
-              <img src="assets/1.png" alt="Librixa Overview" />
+              <img src="assets/1.webp" alt="Librixa Overview" loading="lazy" />
             </div>
             <span data-i18n="gallery-item1">Librixa Overview</span>
           </div>
           <div class="gallery-item">
             <div class="gallery-card">
-              <img src="assets/2.png" alt="Focused Player" />
+              <img src="assets/2.webp" alt="Focused Player" loading="lazy" />
             </div>
             <span data-i18n="gallery-item2">Focused Player</span>
           </div>
           <div class="gallery-item">
             <div class="gallery-card">
-              <img src="assets/3.png" alt="Immersive Experience" />
+              <img src="assets/3.webp" alt="Immersive Experience" loading="lazy" />
             </div>
             <span data-i18n="gallery-item3">Immersive Experience</span>
           </div>
           <div class="gallery-item">
             <div class="gallery-card">
-              <img src="assets/4.png" alt="Smart Search & Chapters" />
+              <img src="assets/4.webp" alt="Smart Search & Chapters" loading="lazy" />
             </div>
             <span data-i18n="gallery-item4">Search & Chapters</span>
           </div>
           <div class="gallery-item">
             <div class="gallery-card">
-              <img src="assets/5.png" alt="Cloud & Local Sync" />
+              <img src="assets/5.webp" alt="Cloud & Local Sync" loading="lazy" />
             </div>
             <span data-i18n="gallery-item5">Cloud & Local Sync</span>
           </div>
           <div class="gallery-item">
             <div class="gallery-card">
-              <img src="assets/6.png" alt="Bookmarks & Favorites" />
+              <img src="assets/6.webp" alt="Bookmarks & Favorites" loading="lazy" />
             </div>
             <span data-i18n="gallery-item6">Bookmarks & Favorites</span>
           </div>
           <div class="gallery-item">
             <div class="gallery-card">
-              <img src="assets/7.png" alt="Light & Drive Mode" />
+              <img src="assets/7.webp" alt="Light & Drive Mode" loading="lazy" />
             </div>
             <span data-i18n="gallery-item7">Light & Drive Mode</span>
           </div>
           <div class="gallery-item">
             <div class="gallery-card">
-              <img src="assets/8.png" alt="Dark Night Mode" />
+              <img src="assets/8.webp" alt="Dark Night Mode" loading="lazy" />
             </div>
             <span data-i18n="gallery-item8">Dark Night Mode</span>
           </div>
@@ -441,7 +488,7 @@
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
         </a>
       </div>
-      <p data-i18n="footer-copyright">© 2026 Librixa. Your audiobook library, your way.</p>
+      <p><span data-i18n="footer-copyright">© 2026 Librixa. Your audiobook library, your way.</span> | <a href="privacy.html" style="color: var(--orange-accent); font-weight: 600;" data-i18n="footer-privacy">Privacy Policy</a></p>
     </div>
     <div class="footer-bottom">
       <p class="dev-credits">

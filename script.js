@@ -27,9 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateHeroImage(theme) {
     if (heroMainImg) {
       if (theme === 'light-theme') {
-        heroMainImg.src = 'assets/hero-main-light.jpg';
+        heroMainImg.src = 'assets/hero-main-light.webp';
       } else {
-        heroMainImg.src = 'assets/hero-main.jpg';
+        heroMainImg.src = 'assets/hero-main.webp';
       }
     }
   }
@@ -142,7 +142,11 @@ document.addEventListener('DOMContentLoaded', () => {
       "faq-q5": "How can I backup or transfer my library?",
       "faq-a5": "You can export a configuration file (`.lxb`) from settings which stores your reading logs, playlists, and bookmarks. Simply import this file on your new device inside Librixa to restore everything.",
       "footer-copyright": "© 2026 Librixa. Your audiobook library, your way.",
-      "footer-dev": "Designed and Developed by"
+      "footer-dev": "Designed and Developed by",
+      "footer-privacy": "Privacy Policy",
+      "differentiation-text": "Unlike conventional audiobook apps that require monthly subscriptions or remote server setups, Librixa offers direct Google Drive streaming and local-first privacy with zero recurring fees.",
+      "why-built-title": "Why I Built Librixa",
+      "why-built-desc": "I built Librixa because I wanted a clean, hassle-free way to listen to my personal audiobook collection stored on Google Drive and local storage without subscriptions or cloud lock-in. Existing players either locked features behind monthly fees or lacked direct cloud streaming for large audio files. Librixa is built local-first and privacy-focused, giving you complete control over your own audiobooks."
     },
     ar: {
       "brand-name": "لِيبريكسا",
@@ -231,7 +235,11 @@ document.addEventListener('DOMContentLoaded', () => {
       "faq-q5": "كيف يمكنني عمل نسخة احتياطية من مكتبتي؟",
       "faq-a5": "من خلال إعدادات التطبيق، يمكنك تصدير ملف إعدادات بامتداد (.lxb) يحتوي على سجل الاستماع والإشارات المرجعية وقوائم التشغيل. يمكنك ببساطة استيراد هذا الملف على أي جهاز آخر لاستعادة بياناتك في ثوانٍ.",
       "footer-copyright": "© 2026 ليبريكسا. مكتبتك الصوتية، بطريقتك الخاصة.",
-      "footer-dev": "تصميم وتطوير بواسطة"
+      "footer-dev": "تصميم وتطوير بواسطة",
+      "footer-privacy": "سياسة الخصوصية",
+      "differentiation-text": "بخلاف تطبيقات الكتب الصوتية التقليدية التي تتطلب اشتراكات شهرية أو إعداد سيرفرات خارجية، يوفر Librixa بثاً مباشراً من Google Drive وخصوصية محلية بالكامل دون أي رسوم متكررة.",
+      "why-built-title": "لماذا قمت ببناء Librixa",
+      "why-built-desc": "قمت ببناء Librixa لأنني أردت وسيلة بسيطة ومباشرة للاستماع إلى مجموعتي الشخصية من الكتب الصوتية المخزنة على Google Drive والذاكرة المحلية دون اشتراكات شهرية أو قيود سحابية. معظم التطبيقات إما تشترط اشتراكات أو تفتقر إلى البث المباشر للكتب الصوتية. تم بناء Librixa ليكون محلياً بالكامل ويحترم خصوصيتك، ليتيح لك التحكم الكامل في مكتبتك الصوتية."
     }
   };
 
@@ -292,9 +300,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const showcaseImg = document.getElementById('showcase-img');
 
   const tabImages = {
-    player: 'assets/showcase-player.jpg',
-    stats: 'assets/showcase-stats.jpg',
-    settings: 'assets/showcase-settings.jpg'
+    player: 'assets/showcase-player.webp',
+    stats: 'assets/showcase-stats.webp',
+    settings: 'assets/showcase-settings.webp'
   };
 
   tabs.forEach(tab => {
