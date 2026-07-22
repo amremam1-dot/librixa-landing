@@ -2163,8 +2163,13 @@ body.rtl-ar .hero-actions {
 .privacy-content {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
   line-height: 1.45;
+}
+
+.privacy-block {
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .privacy-block h2 {
