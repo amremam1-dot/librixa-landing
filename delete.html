@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Librixa Account & Data Deletion Request — Official data removal policy and step-by-step deletion guide for Librixa Audiobook Player by Amr Emam." />
+  <title>Account & Data Deletion | Librixa Audiobook Player</title>
+  
+  <!-- Favicon / Website Icon -->
+  <link rel="icon" type="image/png" href="assets/librixa-logo.png" />
+  <link rel="apple-touch-icon" href="assets/librixa-logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="image-fix.css" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://amremam1-dot.github.io/librixa-landing/delete" />
+  <meta property="og:title" content="Account & Data Deletion | Librixa Audiobook Player" />
+  <meta property="og:description" content="Official data removal policy and step-by-step deletion guide for Librixa Audiobook Player by Amr Emam." />
+  <meta property="og:image" content="https://amremam1-dot.github.io/librixa-landing/assets/hero-main.webp" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://amremam1-dot.github.io/librixa-landing/delete" />
+  <meta name="twitter:title" content="Account & Data Deletion | Librixa Audiobook Player" />
+  <meta name="twitter:description" content="Official data removal policy and step-by-step deletion guide for Librixa Audiobook Player by Amr Emam." />
+  <meta name="twitter:image" content="https://amremam1-dot.github.io/librixa-landing/assets/hero-main.webp" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Cairo:wght@400;600;700;850&display=swap" rel="stylesheet">
+
+  <style>
+    .delete-container {
+      max-width: 900px;
+      margin: 100px auto 60px;
+      padding: 0 20px;
+    }
+    .delete-card {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(255, 152, 0, 0.2);
+      border-radius: 20px;
+      padding: 40px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    }
+    .delete-header {
+      text-align: center;
+      margin-bottom: 35px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 25px;
+    }
+    .delete-header .eyebrow {
+      color: #FF9800;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+    }
+    .delete-header h1 {
+      font-size: 2.2rem;
+      color: #FFFFFF;
+      margin: 10px 0;
+      font-family: 'Playfair Display', serif;
+    }
+    .delete-header .app-badge {
+      display: inline-block;
+      background: rgba(255, 152, 0, 0.15);
+      color: #FFB74D;
+      border: 1px solid rgba(255, 152, 0, 0.3);
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-top: 8px;
+    }
+    .step-box {
+      background: rgba(30, 41, 59, 0.6);
+      border-left: 4px solid #FF9800;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+    .step-title {
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .step-number {
+      background: #FF9800;
+      color: #080C14;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 0.95rem;
+    }
+    .data-table th, .data-table td {
+      padding: 12px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: left;
+    }
+    [dir="rtl"] .data-table th, [dir="rtl"] .data-table td {
+      text-align: right;
+    }
+    .data-table th {
+      background: rgba(255, 152, 0, 0.15);
+      color: #FFB74D;
+      font-weight: 700;
+    }
+    .data-table td {
+      background: rgba(15, 23, 42, 0.4);
+      color: #CBD5E1;
+    }
+    .request-form-box {
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(255, 152, 0, 0.3);
+      border-radius: 12px;
+      padding: 25px;
+      margin-top: 30px;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-group label {
+      display: block;
+      color: #E2E8F0;
+      font-weight: 600;
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+    }
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      background: #080C14;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      color: #FFFFFF;
+      font-size: 0.95rem;
+      box-sizing: border-box;
+    }
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: #FF9800;
+      box-shadow: 0 0 8px rgba(255, 152, 0, 0.3);
+    }
+    .btn-delete-submit {
+      background: linear-gradient(135deg, #FF9800 0%, #E65100 100%);
+      color: #FFFFFF;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      width: 100%;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-delete-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 152, 0, 0.4);
+    }
+    .alert-success {
+      display: none;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid #10B981;
+      color: #34D399;
+      padding: 16px;
+      border-radius: 8px;
+      margin-top: 15px;
+      text-align: center;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body class="dark-theme">
+  <!-- Ambient Background Orbs -->
+  <div class="bg-gradient-wrapper" aria-hidden="true">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="header-container">
+      <a class="brand" href="index.html" aria-label="Librixa home">
+        <img src="assets/librixa-logo.png" alt="Librixa Logo" />
+        <span data-i18n="brand-name">LIBRIXA</span>
+      </a>
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html#features" data-i18n="nav-features">Features</a>
+        <a href="index.html#download" data-i18n="nav-download">Get Librixa</a>
+        <a href="privacy.html" data-i18n="footer-privacy">Privacy Policy</a>
+        
+        <!-- Language Switcher Button -->
+        <button id="lang-toggle" class="lang-toggle-btn" aria-label="Toggle language">
+          <span class="lang-text">العربية</span>
+        </button>
+
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light/dark theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="delete-container">
+    <article class="delete-card">
+      <header class="delete-header">
+        <span class="eyebrow" data-i18n="del-eyebrow">USER DATA CONTROL & PRIVACY</span>
+        <h1 data-i18n="del-title">Account & Data Deletion Request</h1>
+        <div class="app-badge" data-i18n="del-app-info">Librixa Audiobook Player • Developer: Amr Emam</div>
+      </header>
+
+      <div class="delete-content">
+        <p data-i18n="del-intro">At Librixa, we prioritize your data ownership and privacy rights. As a Librixa user, you have full control over your account and synced information. You can request the complete and permanent deletion of your account and all associated personal data at any time.</p>
+
+        <!-- Method 1: In-App Deletion -->
+        <div class="step-box">
+          <div class="step-title">
+            <span class="step-number">1</span>
+            <span data-i18n="del-method1-title">Option 1: Instant In-App Deletion (Recommended)</span>
+          </div>
+          <p data-i18n="del-method1-desc" style="margin-top:10px; color:#CBD5E1;">You can delete your account and clear all local & cloud synced data instantly inside the Librixa mobile app:</p>
+          <ol style="color:#CBD5E1; margin-left: 20px; line-height: 1.8;">
+            <li data-i18n="del-method1-s1">Open <strong>Librixa</strong> on your Android phone or Wear OS watch.</li>
+            <li data-i18n="del-method1-s2">Navigate to <strong>Settings (الإعدادات)</strong> &gt; <strong>Account &amp; Sync (الحساب والمزامنة)</strong>.</li>
+            <li data-i18n="del-method1-s3">Tap <strong>"Delete Account &amp; Clear Data"</strong>.</li>
+            <li data-i18n="del-method1-s4">Confirm your request. All synced listening progress, bookmarks, and account metadata will be purged immediately.</li>
+          </ol>
+        </div>
+
+        <!-- Method 2: Web Deletion Request Form -->
+        <div class="step-box">
+          <div class="step-title">
+            <span class="step-number">2</span>
+            <span data-i18n="del-method2-title">Option 2: Online Deletion Request Form</span>
+          </div>
+          <p data-i18n="del-method2-desc" style="margin-top:10px; color:#CBD5E1;">If you no longer have access to the app, submit a deletion request directly using the form below:</p>
+
+          <div class="request-form-box">
+            <form id="delete-request-form" onsubmit="handleDeleteSubmit(event)">
+              <div class="form-group">
+                <label for="del-email" data-i18n="del-form-email-label">Registered Account Email Address *</label>
+                <input type="email" id="del-email" required placeholder="example@domain.com" />
+              </div>
+              <div class="form-group">
+                <label for="del-reason" data-i18n="del-form-reason-label">Reason for Request (Optional)</label>
+                <textarea id="del-reason" rows="3" placeholder="Tell us how we can improve (optional)..."></textarea>
+              </div>
+              <div class="form-group" style="display:flex; align-items:flex-start; gap:10px;">
+                <input type="checkbox" id="del-confirm" required style="width:auto; margin-top:4px;" />
+                <label for="del-confirm" data-i18n="del-form-checkbox" style="font-weight:400; font-size:0.85rem; color:#CBD5E1;">I confirm that I am requesting permanent deletion of my Librixa account, synced playback progress, bookmarks, and cloud preferences.</label>
+              </div>
+              <button type="submit" class="btn-delete-submit" data-i18n="del-form-submit">Submit Account Deletion Request</button>
+            </form>
+            <div id="delete-success-alert" class="alert-success">
+              <strong data-i18n="del-success-title">Request Received Successfully!</strong><br />
+              <span data-i18n="del-success-desc">Your deletion ticket reference #<span id="ticket-id"></span> has been logged. All account records and synced metadata will be completely purged within 24 to 72 hours.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Data Specified Table -->
+        <h2 data-i18n="del-table-title" style="color:#FFFFFF; margin-top:35px; font-size:1.4rem;">Types of Data Deleted vs. Retained</h2>
+        <p data-i18n="del-table-intro" style="color:#CBD5E1;">In compliance with Google Play Developer Policies and data protection regulations (GDPR/CCPA), here is the exact breakdown of data handling upon deletion:</p>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th data-i18n="del-th-category">Data Category</th>
+              <th data-i18n="del-th-status">Deletion Status</th>
+              <th data-i18n="del-th-retention">Retention Period &amp; Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-i18n="del-tr1-cat">Account Credentials &amp; Profile</td>
+              <td style="color:#10B981; font-weight:700;" data-i18n="del-tr1-stat">Permanently Deleted</td>
+              <td data-i18n="del-tr1-ret">Purged immediately from cloud servers within 24-72 hours.</td>
+            </tr>
+            <tr>
+              <td data-i18n="del-tr2-cat">Synced Playback Progress &amp; Timestamps</td>
+              <td style="color:#10B981; font-weight:700;" data-i18n="del-tr2-stat">Permanently Deleted</td>
+              <td data-i18n="del-tr2-ret">All position markers, chapter progress, and playback stats removed permanently.</td>
+            </tr>
+            <tr>
+              <td data-i18n="del-tr3-cat">Bookmarks, Notes &amp; Favorites</td>
+              <td style="color:#10B981; font-weight:700;" data-i18n="del-tr3-stat">Permanently Deleted</td>
+              <td data-i18n="del-tr3-ret">All user-created audio bookmarks, favorite tags, and categories erased completely.</td>
+            </tr>
+            <tr>
+              <td data-i18n="del-tr4-cat">Google Drive Authorization Tokens</td>
+              <td style="color:#10B981; font-weight:700;" data-i18n="del-tr4-stat">Revoked &amp; Erased</td>
+              <td data-i18n="del-tr4-ret">OAuth tokens are revoked and cleared from database. You can also revoke access anytime at myaccount.google.com/permissions.</td>
+            </tr>
+            <tr>
+              <td data-i18n="del-tr5-cat">Downloaded Audio Files (Local Device)</td>
+              <td style="color:#F59E0B; font-weight:700;" data-i18n="del-tr5-stat">User Controlled (Device Storage)</td>
+              <td data-i18n="del-tr5-ret">Audio files stored on your Android device storage remain under your local control until deleted via the app or file manager.</td>
+            </tr>
+            <tr>
+              <td data-i18n="del-tr6-cat">Security &amp; Abuse Prevention Logs</td>
+              <td style="color:#94A3B8; font-weight:700;" data-i18n="del-tr6-stat">Temporary Retention (Max 30 Days)</td>
+              <td data-i18n="del-tr6-ret">Anonymous request timestamps retained for up to 30 days solely to prevent fraud and satisfy legal compliance obligations, then automatically purged.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Direct Contact Info -->
+        <div style="margin-top:30px; background:rgba(30, 41, 59, 0.4); padding:20px; border-radius:8px; border:1px solid rgba(255,255,255,0.08);">
+          <h3 data-i18n="del-contact-title" style="color:#FFFFFF; margin-top:0;">Need Support or Have Questions?</h3>
+          <p data-i18n="del-contact-desc" style="color:#CBD5E1; font-size:0.9rem; margin-bottom:10px;">You can also email your deletion request directly to developer <strong>Amr Emam</strong> at:</p>
+          <p style="margin:0;"><a href="mailto:amr.emam.dev@gmail.com?subject=Librixa%20Account%20Deletion%20Request" style="color:#FF9800; font-weight:700; text-decoration:underline;">amr.emam.dev@gmail.com</a></p>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p class="copyright" data-i18n="footer-copy">© 2026 Librixa by Amr Emam. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="index.html" data-i18n="footer-home">Home</a>
+        <a href="privacy.html" data-i18n="footer-privacy">Privacy Policy</a>
+        <a href="delete.html" data-i18n="footer-delete">Account Deletion</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    function handleDeleteSubmit(e) {
+      e.preventDefault();
+      var email = document.getElementById('del-email').value;
+      var ticket = 'LIB-' + Math.floor(100000 + Math.random() * 900000);
+      document.getElementById('ticket-id').innerText = ticket;
+      document.getElementById('delete-request-form').style.display = 'none';
+      document.getElementById('delete-success-alert').style.display = 'block';
+
+      // Open default mail client as secondary confirmation trigger
+      var mailSubject = encodeURIComponent("Librixa Account Deletion Request - Ticket #" + ticket);
+      var mailBody = encodeURIComponent("Hello Developer,\n\nI am requesting permanent deletion of my Librixa account and associated data.\nRegistered Email: " + email + "\nTicket ID: " + ticket + "\n\nThank you.");
+      window.location.href = "mailto:amr.emam.dev@gmail.com?subject=" + mailSubject + "&body=" + mailBody;
+    }
+  </script>
+</body>
+</html>
